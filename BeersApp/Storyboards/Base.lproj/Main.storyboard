@@ -49,6 +49,11 @@
                                     </userDefinedRuntimeAttributes>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="userActionLabel" destination="McN-Lr-Bc6" id="unT-2d-HT0"/>
                                     <segue destination="esf-Ea-KdE" kind="show" identifier="userAction" id="glw-D4-2Si"/>

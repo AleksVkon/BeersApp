@@ -21,11 +21,14 @@ enum UserAction: CaseIterable {
 
 enum Link {
     case getBeerURL
+    case ImageURL
     
     var url: URL {
         switch self {
         case .getBeerURL:
-            URL(string: "https://api.punkapi.com/v2/beers/random")!
+            URL(string: "https://api.punkapi.com/v2/beers/192")!
+        case .ImageURL:
+            URL(string: "https://images.punkapi.com/v2/192.png")!
         }
     }
 }

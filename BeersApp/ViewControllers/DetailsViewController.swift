@@ -17,11 +17,20 @@ final class DetailsViewController: UIViewController {
         super.viewDidLoad()
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
-//        fetchImage()
+        fetchImage()
     }
     
-//    private func fetchImage() {
-//        URLSession.shared.dataTask(with: <#T##URLRequest#>, completionHandler: <#T##(Data?, URLResponse?, (any Error)?) -> Void#>)
-//    }.resume()
-    
+    private func fetchImage() {
+        URLSession.shared.dataTask(with: Link.ImageURL.url) {[unowned self] data, _, error in
+            guard let data else {
+                print(error?.localizedDescription ?? "No error description")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.detailImage.image = UIImage(data: data)
+                self.activityIndicator.stopAnimating()
+            }
+        }.resume()
+    }
 }
