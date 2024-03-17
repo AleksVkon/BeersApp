@@ -15,7 +15,6 @@ enum UserAction: CaseIterable {
         case .getBeer:
             "Get Beer!"
         }
-        
     }
 }
 
@@ -26,7 +25,7 @@ enum Link {
     var url: URL {
         switch self {
         case .getBeerURL:
-            URL(string: "https://api.punkapi.com/v2/beers/192")!
+            URL(string: "https://api.punkapi.com/v2/beers/random")!
         case .ImageURL:
             URL(string: "https://images.punkapi.com/v2/192.png")!
         }
@@ -52,11 +51,9 @@ class MainViewController: UICollectionViewController {
         let userAction = userActions[indexPath.item]
         
         switch userAction {
-        case .getBeer: performSegue(withIdentifier: "userAction", sender: nil)
+        case .getBeer: getBeer()
         }
-        
     }
-
 }
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
